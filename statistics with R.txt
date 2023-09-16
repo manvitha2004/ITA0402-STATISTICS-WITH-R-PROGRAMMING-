@@ -1,0 +1,343 @@
+name <- c("hema","dinesh")
+age <- c(20,19)
+cat("Your name is:", name, "\n",name)
+cat("Your age is:", age, "\n",age)
+cat("R version:", R.version$version.string, "\n")
+
+
+x <- 25
+y <- "hema"
+z <- c(1, 2, 3)
+cat("Objects in memory:\n")
+object_names <- ls()
+print(object_names)
+cat("\nDetails of objects:\n")
+ls.str()
+
+
+sequence<-20:50
+mean<-mean(20:60)
+sum<-sum(51:91)
+cat("sequence is:",sequence,"\n")
+cat("mean is:",mean,"\n")
+cat("sum is:",sum,"\n")
+
+set.seed(123)
+random_vector <- sample(-50:50, 10,replace=TRUE)
+cat("Random vector:", random_vector, "\n")
+
+fibonacci <- function(n) {
+  fib <- numeric(n)
+  if (n >= 1) {
+    fib[1] <- 0
+  }
+  if (n >= 2) {
+    fib[2] <- 1
+  }
+  for (i in 3:n) {
+    fib[i] <- fib[i-1] + fib[i-2]
+  }
+  return(fib)
+}
+first_10_fibonacci <- fibonacci(10)
+cat("First 10 Fibonacci numbers:", first_10_fibonacci, "\n")
+
+prime_numbers <- function(n) {
+  if (n >= 2) {
+    x = seq(2, n)
+    prime_nums = c()
+    for (i in x) {
+      if (any(x == i)) {
+        prime_nums = c(prime_nums, i)
+        x = c(x[(x %% i) != 0], i)
+      }
+    }
+    return(prime_nums)
+  }
+  else 
+  {
+    stop("Input number should be at least 2.")
+  }
+} 
+prime_numbers(12) 
+
+
+for (i in 1:100) {
+  if (i %% 3==0 && i%%5==0) {
+    cat("FizzBuzz","\n")
+  } else if (i%%3==0) {
+    cat("Fizz","\n")
+  } else if (i%%5==0) {
+    cat("Buzz","\n")
+  } else {
+    cat(i,"\n")
+  }
+}
+
+lower <- letters[1:10]
+upper <- toupper(letters[17:26])
+letters<- toupper(letters[22:24])
+cat("First 10 English letters in lower case:",lower,"\n")
+cat("Last 10 letters in upper case:",upper,"\n")
+cat("Letters between 22nd and 24th in upper case:", letters,"\n")
+
+
+factors = function(n) {
+  cat("The factors of",n,"are:\n")
+  for(i in 1:n) {
+    if((n %% i) == 0) {
+      print(i)
+    }
+  }
+}
+factors(15)
+
+
+vector<-c(10,20,30,40,50)
+cat("max value of the vector is:\n",max(vector))
+cat("min value of the vector is:\n",min(vector))
+
+
+str1 = "programming"
+unique_string<-unique(strsplit(str1,NULL)[[1]])
+cat("the original vector is:",str1)
+cat("Unique elements of the vector:",unique_string)
+nums = c(1, 2, 9, 5, 8, 6, 7, 9)
+cat("the original numbers are:",nums)
+cat("the unique numbers are:",unique(nums))
+
+
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-c(7,8,9)
+m<-cbind(a,b,c)
+print(m)
+
+n=floor(rnorm(10,5,5))
+cat("the normal distribution is:",n)
+t=table(n)
+cat("the count of occurences are:",t)
+
+
+data<-read.csv("C:/Users/Hari Naidu/Desktop/POM/statistics with R/content.csv")
+print(data)
+
+
+numeric_vector<-c(1,10.4,20.2)
+character_vector<-c("apple","ball","cat")
+logical_vector<-c(TRUE,FALSE,TRUE)
+print(numeric_vector)
+print(class(numeric_vector))
+print(character_vector)
+print(class(character_vector))
+print(logical_vector)
+print(class(logical_vector))
+
+
+rnames<-c("r1","r2","r3","r4","r5")
+cnames<-c("c1","c2","c3","c4")
+m1<-matrix(c(1:20),nrow=5,ncol=4,byrow=TRUE,dimnames=list(rnames,cnames))
+print(m1)
+r2<-c("r1","r2","r3")
+c2<-c("c1","c2","c3")
+m2<-matrix(c(1:9),nrow=3,ncol=3,byrow=TRUE,dimnames=list(r2,c2))
+print(m2)
+r3<-c("r1","r2")
+c3<-c("c1","c2")
+m3<-matrix(c(1:4),nrow=2,ncol=2,byrow=FALSE,dimnames=list(r3,c3))
+print(m3)
+
+v1<-1:9
+v2<-10:18
+r<-c("r1","r2","r3")
+c<-c("c1","c2","c3")
+a<-array(c(v1,v2),dim=c(3,3,2),dimnames=list(r,c))
+print(a)
+
+
+a<-array(
+1:18,
+dim=c(3,3,2),
+dimnames=list(
+c("r1","r2","r3"),
+c("c1","c2","c3"),
+c("part1","part2"))
+)
+print(a)
+
+
+list<-list(
+vector<-c("apple","bat"),
+matrix<-matrix(c(1:4),nrow=2),
+square<-function(n){
+a<-n^2
+print(a)
+square(2)
+}
+)
+print(list)
+
+
+plot.new()
+plot(1,type="n",xlab="x",ylab="y",xlim=c(0,20),ylim=c(0,20),main="empty plot")
+
+
+
+v1<-1:9
+v2<-10:18
+m1<-matrix(c(v1),nrow=3)
+print(m1)
+m2<-matrix(c(v2),nrow=3)
+print(m2)
+a<-array(c(m1,m2),dim=c(3,3,2))
+print(m2[2,])
+print(a[3,3,1])
+
+
+a1<-array(1:9,dim=c(3,3))
+a2<-array(10:18,dim=c(3,3))
+a3<-array(19:27,dim=c(3,3))
+combined_array<-rbind(a1[1,],a2[1,],a3[1,])
+print(combined_array)
+
+a<-array(1:24,dim=c(3,4,2))
+print(a)
+
+
+a<-array(seq(from=52,length.out=15,by=2),dim=c(5,3))
+print(a)
+
+
+exam_data = data.frame(
+name = c('Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin',
+'Jonas'),
+score = c(12.5, 9, 16.5, 12, 9, 20, 14.5, 13.5, 8, 19),
+attempts = c(1, 3, 2, 3, 2, 3, 1, 1, 2, 1),
+qualify = c('yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes')
+)
+result<-exam_data[c(3,5),c(1,3)]
+print(result)
+exam_data$country<-c("USA","USA","USA","USA","UK","USA","USA","India","USA","USA")
+v<-exam_data
+print(v)
+new_exam_data = data.frame(name = c('Robert', 'Sophia'),score = c(10.5, 9), attempts = c(1, 
+3),qualify = c('yes', 'no'),country=c("India","UK"))
+final_data<-rbind(exam_data,new_exam_data)
+print(final_data)
+sorted_data<-exam_data[order(exam_data$name,exam_data$score),]
+print(sorted_data)
+write.csv(exam_data,"exam_data.csv")
+filecontents<-read.csv("exam_data.csv")
+print(filecontents)
+
+
+data("airquality")
+if(is.data.frame(airquality)){
+print("it ia a dataframe")
+}else{
+ print("not a dataframe")
+}
+ordered_data<-airquality[order(airquality$Month,airquality$Day),]
+print(ordered_data)
+cleaned_data<-ordered_data[,!(names(ordered_data)%in%c("Solar.R","Wind"))]
+print(cleaned_data)
+
+
+data("women")
+height_factor<-cut(women$height,breaks=c(50,60,70),labels=c("tall","short"))
+print(height_factor)
+
+
+set.seed(123)
+sample_letters<-sample(LETTERS,size=20,replace=TRUE)
+sample_factors<-factor(sample_letters)
+five_levels<-sample(levels(sample_factors),size=5)
+print(five_levels)
+
+
+library(datasets)
+data("iris")
+dim(iris)
+str(iris)
+summary(iris)
+sapply(iris[,1:4],sd)
+aggregate(iris,by=list(species=iris$species),FUN=mean)
+aggregate(iris,by=list(species=iris$species),FUN=sd)
+quantile(iris$Sepal.Width)
+quantile(iris$Sepal.Length)
+iris1<-iris
+iris$Sepal.Length.Cate<-cut(iris$Sepal.Length,breaks=quantile(iris$Sepal.Length),labels=c("q1","q2","q3","q4))
+aggregate(iris1[,1:4],by=list(species=iris1$species,Sepal.Length.Cate=iris1$Sepal.Length.Cate),Fun=mean)
+pivot_table<-table(iris1$species,iris1$Sepal.Length.Cate)
+
+
+library(datasets)
+library(caTools)
+library(nnet)
+data(iris)
+set.seed(123)
+split <- sample.split(iris$Species, SplitRatio = 0.8)
+train_data <- subset(iris, split == TRUE)
+test_data <- subset(iris, split == FALSE)
+model <-multinom(Species~Petal.Length +Petal.Width, data = train_data)
+predicted_probs <- predict(model, newdata = test_data, type = "probs")
+predicted_labels <- colnames(predicted_probs)[apply(predicted_probs, 1, which.max)]
+conf_matrix <- table(predicted = predicted_labels, actual = test_data$Species)
+print("Confusion Matrix:")
+print(conf_matrix)
+accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
+print(accuracy)
+
+
+values<-c(90, 50, 70, 80, 70, 60, 20, 30, 80, 90, 20) 
+mean<-mean(values)
+cat("mean is:",mean)
+meadian<-median(values)
+print(median)
+mode<-names(table(values))[table(values)==max(table(values))]
+cat("mode is:",mode)
+sorted_data<-sort(values,decreasing=TRUE)
+second_highest<-sorted_data[2]
+print(second_highest)
+third_lowest<-sorted_values[length(sorted_data)-2]
+print(third_lowest)
+
+
+
+library(ggplot2)
+data("Titanic")
+barplot_data <- as.data.frame(Titanic)
+barplot_data$Survived <- factor(barplot_data$Survived, levels = c("No", "Yes"))
+ggplot(barplot_data, aes(x = Class, fill = Survived)) +
+  geom_bar(position = "stack") +
+  labs(title = "Survival on Titanic by Passenger Class", x = "Passenger Class", y = "Count") +
+  scale_fill_manual(values = c("No" = "red", "Yes" = "green")) +
+  theme_minimal()
+gender_plot_data <- aggregate(Freq~Class+Survived+Sex, data = barplot_data, sum)
+ggplot(gender_plot_data, aes(x = Class, y = Freq, fill = Survived)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  facet_grid(Sex ~ .) +
+  labs(title = "Survival on Titanic by Passenger Class and Gender", x = "Passenger Class", y = "Count") +
+  scale_fill_manual(values = c("No" = "red", "Yes" = "green")) +
+  theme_minimal()
+data <- data.frame(Age = c( 45, 50, 55, 60, 65, 70, 75),
+                   Frequency = c(10, 35, 40, 35, 60, 50, 20))
+ggplot(data, aes(x = Age, y = Frequency, fill = Age)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "Distribution of Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+
+
+data <- data.frame(
+  Month = 1:12,
+  Spends = c(1000, 4000, 5000, 4500, 3000, 4000, 9000, 11000, 15000, 12000, 7000, 3000),
+  Sales = c(9914, 40487, 54324, 50044, 34719, 42551, 94871, 118914, 158484, 131348, 78504, 36284)
+)
+print(data)
+model <- lm(Sales~ Spends, data = data)
+print(model)
+new_data <- data.frame(Spends = 13500)
+predicted_sales <- predict(model, newdata = new_data)
+cat("Predicted Sales for Spend = 13500:", predicted_sales, "\n")
